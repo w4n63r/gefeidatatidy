@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>哥飞出海做网站赚美元 — 知识学习与实战工作台</title>
+  <!-- CSS Dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" id="hljs-theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="light-mode">
+  <div id="app" class="app-layout">
+    <!-- Top Navbar -->
+    <header class="top-nav">
+      <div class="nav-brand">
+        <div class="brand-logo"><i data-lucide="rocket"></i></div>
+      </div>
+
+      <div class="nav-search-trigger" onclick="openSearchModal()">
+        <i data-lucide="search"></i>
+        <span>快速搜索 726 篇文章与 606 份精读报告...</span>
+        <kbd>⌘ K</kbd>
+      </div>
+
+      <div class="nav-actions">
+        <div class="progress-pill">
+          <div class="progress-pill-bar"><div id="top-progress-fill" class="progress-fill"></div></div>
+          <span id="top-progress-text">0/726</span>
+        </div>
+        <button class="nav-icon-btn" onclick="toggleDarkMode()" title="切换亮/暗色模式">
+          <i data-lucide="moon" id="theme-icon"></i>
+        </button>
+        <button class="nav-btn primary" onclick="switchView('roadmap')">
+          <i data-lucide="map"></i><span>路线图</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main 3-Column Workspace -->
+    <div class="workspace">
+      <!-- Left Sidebar: Stage Navigation & Article List -->
+      <aside class="sidebar-left" id="sidebar-left">
+        <!-- View Segmented Tabs -->
+        <div class="sidebar-top-section">
+          <div class="view-segmented-control">
+            <button class="seg-btn active" id="tab-stages" onclick="switchSidebarTab('stages')"><i data-lucide="layers"></i> 阶段学习</button>
+            <button class="seg-btn" id="tab-mustread" onclick="switchSidebarTab('mustread')"><i data-lucide="flame"></i> 必读精选</button>
+            <button class="seg-btn" id="tab-bookmarks" onclick="switchSidebarTab('bookmarks')"><i data-lucide="bookmark"></i> 收藏</button>
+            <button class="seg-btn" id="tab-pitfalls" onclick="switchSidebarTab('pitfalls')"><i data-lucide="alert-triangle"></i> 避坑</button>
+          </div>
+
+          <!-- Stage Selector Bar (Only in Stages View) -->
+          <div id="stage-selector-container" class="stage-selector-bar">
+            <button class="stage-step-btn" onclick="window.app.prevStage()" title="上一个阶段"><i data-lucide="chevron-left"></i></button>
+            <div class="stage-picker-dropdown" onclick="window.app.toggleStageDropdown()">
+              <div class="stage-picker-badge" id="current-stage-badge">S0</div>
+              <div class="stage-picker-info">
+                <span class="stage-picker-title" id="current-stage-title">S0 认知与心态</span>
+                <span class="stage-picker-progress" id="current-stage-progress">0/195 (0%)</span>
+              </div>
+              <i data-lucide="chevrons-up-down" class="stage-picker-arrow"></i>
+            </div>
+            <button class="stage-step-btn" onclick="window.app.nextStage()" title="下一个阶段"><i data-lucide="chevron-right"></i></button>
+          </div>
+
+          <!-- Quick Search & Filter Controls -->
+          <div class="sidebar-search-row">
+            <div class="sidebar-search-box">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" id="sidebar-filter" placeholder="搜索当前列表文章..." oninput="filterSidebarList()">
+              <button id="sidebar-filter-clear" class="btn-clear-search" onclick="window.app.clearSidebarFilter()" style="display:none;"><i data-lucide="x"></i></button>
+            </div>
+            <div class="sort-select-mini">
+              <select id="sidebar-sort-select" onchange="window.app.setSortOrder(this.value)">
+                <option value="priority">⭐ 重点</option>
+                <option value="date_desc">🕒 最新</option>
+                <option value="date_asc">⏳ 最早</option>
+                <option value="diff_asc">⚡ 难度</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Type Filter Pills -->
+          <div class="type-filter-pills" id="sidebar-type-chips">
+            <button class="pill-btn active" onclick="window.app.setTypeFilter('all')">全部</button>
+            <button class="pill-btn unread-pill" id="filter-unread-btn" onclick="window.app.toggleUnreadOnly()">未读</button>
+            <button class="pill-btn" onclick="window.app.setTypeFilter('P')">实操 SOP</button>
+            <button class="pill-btn" onclick="window.app.setTypeFilter('C')">认知心法</button>
+            <button class="pill-btn" onclick="window.app.setTypeFilter('R')">工具资源</button>
+          </div>
+        </div>
+
+        <!-- Stage Dropdown Menu Drawer -->
+        <div id="stage-dropdown-drawer" class="stage-dropdown-drawer" style="display: none;">
+          <!-- Injected by JS with S0 ~ S9 cards -->
+        </div>
+
+        <!-- Dynamic Article List (Single Smooth Scroll) -->
+        <div class="sidebar-content" id="sidebar-list-container">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Sleek Footer Bar -->
+        <div class="sidebar-footer-bar">
+          <button class="footer-help-btn" onclick="window.app.openPacerGuideModal()">
+            <i data-lucide="help-circle"></i>
+            <span>PACER 分类说明</span>
+          </button>
+          <div class="footer-stats-badge" id="footer-stats-badge">全站已学 0/726 (0%)</div>
+        </div>
+      </aside>
+
+      <!-- Center Main Content: Dual-Mode Reader / Roadmap Explorer / Pitfall View -->
+      <main class="main-viewer" id="main-viewer">
+        <!-- Reader View Header -->
+        <div class="reader-toolbar" id="reader-toolbar">
+          <div class="article-breadcrumb" id="article-breadcrumb">
+            <span class="crumb-stage">S0 认知与心态</span> / <span class="crumb-title">请选择一篇文章开始学习</span>
+          </div>
+          <div class="reader-controls">
+            <div class="mode-switch-group">
+              <button class="mode-btn active" id="btn-mode-report" onclick="setReaderMode('report')"><i data-lucide="file-text"></i> 精读报告</button>
+              <button class="mode-btn" id="btn-mode-raw" onclick="setReaderMode('raw')"><i data-lucide="external-link"></i> 微信原文</button>
+              <button class="mode-btn" id="btn-mode-split" onclick="setReaderMode('split')"><i data-lucide="columns"></i> 双栏对照</button>
+            </div>
+            <button class="action-btn" id="btn-bookmark" onclick="toggleCurrentBookmark()" title="收藏文章">
+              <i data-lucide="bookmark"></i>
+            </button>
+            <button class="action-btn" id="btn-complete" onclick="toggleCurrentCompleted()" title="标记已读">
+              <i data-lucide="check-circle"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reader Container -->
+        <div class="reader-body" id="reader-body">
+          <div class="pane-report" id="pane-report">
+            <div id="report-markdown-content" class="markdown-body">
+              <!-- Rendered Markdown goes here -->
+            </div>
+          </div>
+          <div class="pane-raw" id="pane-raw" style="display: none;">
+            <iframe id="raw-article-frame" src="about:blank"></iframe>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Panel: TOC, Notes & Key Recommendations -->
+      <aside class="sidebar-right" id="sidebar-right">
+        <div class="right-panel-tabs">
+          <button class="panel-tab active" id="ptab-toc" onclick="switchRightTab('toc')"><i data-lucide="list"></i> 大纲</button>
+          <button class="panel-tab" id="ptab-notes" onclick="switchRightTab('notes')"><i data-lucide="edit-3"></i> 学习笔记</button>
+        </div>
+        <div class="right-panel-content">
+          <div id="panel-toc-content" class="toc-container">
+            <!-- Dynamic TOC list -->
+          </div>
+          <div id="panel-notes-content" class="notes-container" style="display: none;">
+            <textarea id="article-note-editor" placeholder="记录你在这篇文章中学到的核心启发、思考或行动计划..." oninput="saveCurrentNote()"></textarea>
+            <div class="note-footer">
+              <span id="note-save-status">本地自动保存</span>
+              <button class="btn-xs" onclick="exportNotes()"><i data-lucide="download"></i> 导出所有笔记</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Global Search Modal (⌘K) -->
+    <div class="modal-overlay" id="search-modal" onclick="closeSearchModal(event)">
+      <div class="search-modal-box" onclick="event.stopPropagation()">
+        <div class="search-input-wrap">
+          <i data-lucide="search"></i>
+          <input type="text" id="global-search-input" placeholder="输入关键词、阶段（S0~S8）、作者或痛点..." oninput="handleGlobalSearch()">
+          <kbd onclick="closeSearchModal()">ESC</kbd>
+        </div>
+        <div class="search-filters-row">
+          <span class="filter-label">阶段快速过滤:</span>
+          <div class="stage-tag-chips" id="search-stage-chips">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+        <div class="search-results-list" id="search-results-list">
+          <!-- Search results injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- PACER Guide Modal -->
+    <div class="modal-overlay" id="pacer-modal" onclick="window.app.closePacerGuideModal(event)">
+      <div class="pacer-modal-box" onclick="event.stopPropagation()">
+        <div class="pacer-modal-header">
+          <div class="pacer-modal-title"><i data-lucide="help-circle"></i> PACER 内容学习分类体系说明</div>
+          <button class="btn-close" onclick="window.app.closePacerGuideModal()">✕</button>
+        </div>
+        <div class="pacer-modal-body">
+          <p class="pacer-intro">每篇文章右侧标注的标签（如 <b>实操 SOP</b> / <b>认知心法</b>）采用业界通用的 <b>PACER 认知萃取模型</b>，帮助您根据当前学习目的快速匹配：</p>
+          <div class="pacer-guide-grid">
+            <div class="pacer-card card-p">
+              <div class="pacer-tag P">P • 实操 SOP</div>
+              <div class="pacer-desc"><b>Procedural（操作流程与教程）</b>：手把手步骤教学、部署上线、GSC诊断排查等具体落地 SOP。</div>
+            </div>
+            <div class="pacer-card card-c">
+              <div class="pacer-tag C">C • 认知心法</div>
+              <div class="pacer-desc"><b>Conceptual（概念与底层逻辑）</b>：作品思维、商业模型、逆向工作法、大模型思维等认知破局内容。</div>
+            </div>
+            <div class="pacer-card card-a">
+              <div class="pacer-tag A">A • 行动清单</div>
+              <div class="pacer-desc"><b>Actionable（执行与自测列表）</b>：可直接照着打勾执行的 Checklist、选词与避坑行动清单。</div>
+            </div>
+            <div class="pacer-card card-r">
+              <div class="pacer-tag R">R • 工具资源</div>
+              <div class="pacer-desc"><b>Resource（高价值工具链）</b>：SEO工具、开源脚手架、官方文档与推广渠道汇总。</div>
+            </div>
+            <div class="pacer-card card-e">
+              <div class="pacer-tag E">E • 经验复盘</div>
+              <div class="pacer-desc"><b>Emotional（踩坑与团队心路）</b>：操盘手真实千万营收复盘、亏损反思与出海心态历程。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

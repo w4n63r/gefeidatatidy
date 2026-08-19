@@ -7,11 +7,11 @@
     "stage2_clean": "done",
     "stage3_global_map": "done",
     "stage4_per_article": "done",
-    "stage5_flow": "pending",
-    "stage6_summary": "pending",
-    "stage7_mindmap": "pending",
-    "stage8_learning_hub": "optional",
-    "stage9_qa": "pending"
+    "stage5_flow": "done",
+    "stage6_summary": "done",
+    "stage7_mindmap": "done",
+    "stage8_learning_hub": "done",
+    "stage9_qa": "done"
   },
   "counts": {
     "total_articles": 726,
