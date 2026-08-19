@@ -1,0 +1,23 @@
+0 verbose cli E:\CodeAPP\nvm\node\node.exe E:\CodeAPP\nvm\nvm\v22.22.0\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.4
+2 info using node@v22.22.0
+3 silly config load:file:E:\CodeAPP\nvm\nvm\v22.22.0\node_modules\npm\npmrc
+4 silly config load:file:D:\Users\Administrator\Desktop\gfData\哥飞\.npmrc
+5 silly config load:file:C:\Users\Administrator\.npmrc
+6 silly config load:file:E:\CodeAPP\nvm\node\etc\npmrc
+7 verbose title npm exec skills add --help
+8 verbose argv "exec" "--yes" "--cache" ".\\\\.npm-cache" "--" "skills" "add" "--help"
+9 verbose logfile logs-max:10 dir:D:\Users\Administrator\Desktop\gfData\哥飞\.npm-cache\_logs\2026-08-17T02_42_25_786Z-
+10 verbose logfile D:\Users\Administrator\Desktop\gfData\哥飞\.npm-cache\_logs\2026-08-17T02_42_25_786Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 http fetch GET https://registry.npmmirror.com/skills attempt 1 failed with ENOTFOUND
+14 http fetch GET 200 https://registry.npmmirror.com/skills 21595ms (cache revalidated)
+15 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+16 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+17 verbose cwd D:\Users\Administrator\Desktop\gfData\哥飞
+18 verbose os Windows_NT 10.0.19045
+19 verbose node v22.22.0
+20 verbose npm  v10.9.4
+21 verbose exit 0
+22 info ok

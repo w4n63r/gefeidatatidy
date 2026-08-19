@@ -1,0 +1,45 @@
+{
+  "updated": "2026-08-19",
+  "manual": "02-执行手册-给Codex按步骤执行.md (v5)",
+  "status": {
+    "stage0_env": "done",
+    "stage1_parse": "done",
+    "stage2_clean": "done",
+    "stage3_global_map": "done",
+    "stage4_per_article": "done",
+    "stage5_flow": "pending",
+    "stage6_summary": "pending",
+    "stage7_mindmap": "pending",
+    "stage8_learning_hub": "optional",
+    "stage9_qa": "pending"
+  },
+  "counts": {
+    "total_articles": 726,
+    "parsed_ok": 707,
+    "image_only": 13,
+    "unparseable": 6,
+    "analyzed": 726,
+    "remaining": 0,
+    "reports_written": 606,
+    "stage_only_entries": 120
+  },
+  "stageDistribution": {
+    "S6_变现与商业化": 64,
+    "S0_认知与心态": 195,
+    "S7_工具与资源": 35,
+    "S2_建站与开发": 63,
+    "S9_非学习类": 75,
+    "S3_SEO与流量入门": 70,
+    "S1_需求与关键词": 139,
+    "S5_SEO进阶与增长": 52,
+    "S4_内容与多语言": 10,
+    "S7_收款与合规": 7,
+    "S8_避坑警示": 16
+  },
+  "resume": {
+    "how": "新会话按 02 v5 从 阶段4 续跑：读 output/clean/articles_clean.jsonl，跳过 output/analysis/articles_analysis.jsonl 中已存在的 id，分批精读剩余文章",
+    "helperScript": "scripts/batch_reader.js（打印未处理文章，参数：start count）",
+    "progressFile": "output/progress_analysis.json",
+    "mapFeedback": "output/analysis/map_feedback.md"
+  }
+}

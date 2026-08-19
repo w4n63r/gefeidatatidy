@@ -1,0 +1,15 @@
+﻿const fs = require('fs');
+const path = require('path');
+const lines = fs.readFileSync(path.join('output','clean','articles_clean.jsonl'),'utf8').split('\n').filter(Boolean);
+const arts = lines.map(l => JSON.parse(l));
+const two = arts.filter(x => x.id.includes('2023-04-21-0700'));
+const a16 = two.find(x => !x.id.includes('10分钟'));
+console.log('========== 如何让AI帮你自动赚钱 ==========');
+console.log('ID: ' + a16.id);
+console.log('WORDS: ' + a16.word_count + ' | STATUS: ' + a16.status);
+console.log((a16.cleaned_text||'').slice(0, 1600));
+const a17 = arts.find(x => x.id.includes('2023-04-22-0700'));
+console.log('========== 五年独立开发之旅 ==========');
+console.log('TITLE: ' + a17.title);
+console.log('WORDS: ' + a17.word_count + ' | STATUS: ' + a17.status);
+console.log((a17.cleaned_text||'').slice(0, 2200));

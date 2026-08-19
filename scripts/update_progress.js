@@ -1,0 +1,14 @@
+﻿const fs = require('fs');
+const path = require('path');
+const p = JSON.parse(fs.readFileSync(path.join('output','progress_analysis.json'),'utf8'));
+const entries = fs.readFileSync(path.join('output','analysis','articles_analysis.jsonl'),'utf8').split('\n').filter(Boolean).map(l=>JSON.parse(l));
+const reports = fs.readdirSync(path.join('知识流程','文章分析')).filter(f=>f.endsWith('.md')).length;
+p.counts.analyzed = entries.length;
+p.counts.remaining = 726 - entries.length;
+p.counts.reports_written = reports;
+p.counts.stage_only_entries = entries.filter(e=>!e.report).length;
+const stageCount = {};
+for (const e of entries) stageCount[e.stage] = (stageCount[e.stage]||0)+1;
+p.stageDistribution = stageCount;
+fs.writeFileSync(path.join('output','progress_analysis.json'), JSON.stringify(p, null, 2), { encoding: 'utf8' });
+console.log('进度已更新: 分析', entries.length, '/ 726 | 报告', reports, '| 阶段分布', JSON.stringify(stageCount));

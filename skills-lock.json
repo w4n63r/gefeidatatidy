@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "learning-cheatsheet": {
+      "source": "HermeticOrmus/learning-skills",
+      "sourceType": "github",
+      "skillPath": "skills/learning-cheatsheet/SKILL.md",
+      "computedHash": "c5542945e7f235ad2555ebe333ec580768f59b5b9754ec43f7cf8619d949a98f"
+    },
+    "learning-compare": {
+      "source": "HermeticOrmus/learning-skills",
+      "sourceType": "github",
+      "skillPath": "skills/learning-compare/SKILL.md",
+      "computedHash": "1f0b4c979f7a30b86b228488cd7223f7246e7e4af1752594eaa27fb455fd3675"
+    },
+    "learning-explain": {
+      "source": "HermeticOrmus/learning-skills",
+      "sourceType": "github",
+      "skillPath": "skills/learning-explain/SKILL.md",
+      "computedHash": "753b7af7c12adcc79860182f2c7f20107421ad37ef428858f64c41345967d943"
+    },
+    "learning-practice": {
+      "source": "HermeticOrmus/learning-skills",
+      "sourceType": "github",
+      "skillPath": "skills/learning-practice/SKILL.md",
+      "computedHash": "2f83c306a28aca31a691466c2f79c61dc8a8bc5c8d9ae7f0faedd89ea8d72849"
+    },
+    "learning-roadmap": {
+      "source": "HermeticOrmus/learning-skills",
+      "sourceType": "github",
+      "skillPath": "skills/learning-roadmap/SKILL.md",
+      "computedHash": "780bee781e7e6d8d260fa41eac225908ec7372bbc56c2f7a2c899e65d73f518e"
+    },
+    "summarizer": {
+      "source": "jiangxidong/agent-skill-summarizer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "d392adb82ad8abcfb63862c204b4f8861535e08c3b45f04bc47378155900ca38"
+    }
+  }
+}
