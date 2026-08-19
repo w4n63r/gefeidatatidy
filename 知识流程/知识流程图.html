@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>哥飞出海做网站赚美元 — 全局知识流程与学习路径图</title>
+  <style>
+    :root { --primary: #2563eb; --primary-light: #eff6ff; --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b; --border: #e2e8f0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.5; padding: 30px 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .header { text-align: center; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 800; color: #1e293b; margin-bottom: 12px; }
+    .header p { font-size: 15px; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+    .stats-bar { display: flex; justify-content: space-around; background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 35px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 24px; font-weight: 700; color: var(--primary); }
+    .stat-label { font-size: 13px; color: var(--text-muted); }
+    .stage-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); overflow: hidden; transition: all 0.2s ease; }
+    .stage-card:hover { border-color: #93c5fd; box-shadow: 0 4px 12px rgba(37,99,235,0.08); }
+    .stage-header { display: flex; align-items: center; padding: 20px 24px; cursor: pointer; user-select: none; background: #ffffff; }
+    .stage-badge { width: 44px; height: 44px; background: var(--primary); color: #fff; font-weight: 800; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-right: 18px; flex-shrink: 0; }
+    .stage-info { flex-grow: 1; }
+    .stage-name { font-size: 18px; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .stage-count { font-size: 13px; font-weight: normal; color: var(--text-muted); background: #f1f5f9; padding: 2px 8px; border-radius: 6px; }
+    .stage-goal { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+    .stage-toggle-btn { font-size: 13px; color: var(--primary); font-weight: 600; padding: 6px 12px; border-radius: 6px; background: var(--primary-light); }
+    .stage-milestone { background: #fefce8; border-top: 1px solid #fef08a; border-bottom: 1px solid #fef08a; padding: 10px 24px; font-size: 13px; color: #854d0e; }
+    .stage-body { padding: 20px 24px; background: #fafafa; border-top: 1px solid var(--border); }
+    .article-list { list-style: none; }
+    .article-item { padding: 12px 0; border-bottom: 1px dashed var(--border); }
+    .article-item:last-child { border-bottom: none; }
+    .article-title { font-size: 14px; font-weight: 600; color: #334155; }
+    .article-meta { display: flex; align-items: center; gap: 8px; margin: 6px 0; font-size: 12px; }
+    .article-summary { font-size: 13px; color: var(--text-muted); }
+    .pacer-badge { font-weight: 700; padding: 1px 6px; border-radius: 4px; font-size: 11px; }
+    .pacer-badge.P { background: #dcfce7; color: #166534; }
+    .pacer-badge.A { background: #e0e7ff; color: #3730a3; }
+    .pacer-badge.C { background: #fef3c7; color: #92400e; }
+    .pacer-badge.E { background: #fce7f3; color: #9d174d; }
+    .pacer-badge.R { background: #f3e8ff; color: #6b21a8; }
+    .diff-badge, .min-badge { background: #f1f5f9; color: #475569; padding: 1px 6px; border-radius: 4px; font-size: 11px; }
+    .report-tag { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .raw-tag { color: var(--text-muted); text-decoration: none; }
+    .report-tag:hover, .raw-tag:hover { text-decoration: underline; }
+    .article-more { font-size: 13px; color: var(--text-muted); font-style: italic; padding-top: 10px; }
+    .flow-arrow { text-align: center; margin: 8px 0; display: flex; flex-direction: column; align-items: center; }
+    .arrow-line { width: 2px; height: 16px; background: #cbd5e1; }
+    .arrow-text { font-size: 11px; font-weight: 700; color: #94a3b8; margin-top: 2px; }
+    .footer { text-align: center; margin-top: 50px; font-size: 13px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <p>基于 726 篇出海实战公众号全量精读与 606 份结构化报告，系统构建的个人开发者 Web 出海 9 阶段递进学习与实战闭环体系。</p>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-num">726 篇</div><div class="stat-label">全量文章分析</div></div>
+      <div class="stat-item"><div class="stat-num">606 份</div><div class="stat-label">方法论精读报告</div></div>
+      <div class="stat-item"><div class="stat-num">9 大阶段</div><div class="stat-label">递进实操流程</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">全链路闭环</div></div>
+    </div>
+
+    <div class="roadmap-flow">
+      
+      <div class="stage-card" id="card-S0">
+        <div class="stage-header" onclick="toggleStage('S0')">
+          <div class="stage-badge">S0</div>
+          <div class="stage-info">
+            <div class="stage-name">认知与心态 <span class="stage-count">195 篇文章 (168 篇精读)</span></div>
+            <div class="stage-goal">建立作品思维、躬身入局与独立开发出海正确预期，破除打工惯性与大招妄念</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S0">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>确立 1~2 个重点出海方向，完成出海工具链准备，树立“小步快跑、以赚美元为正反馈”的心态</div>
+        <div class="stage-body" id="body-S0" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">创业增长心理学</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/创业增长心理学.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2020-03-15-1651]创业增长心理学.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">增长靠五种心态：语言优先/理解用户/不断前进/热爱数据/承受失败</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2020-04-14-0734]把工作当做自己的作品</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/把工作当做自己的作品.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2020-04-14-0734]把工作当做自己的作品.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">把工作当作品打磨，专注做透一件事</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">走捷径会更快吗？\n\n好几次，滴滴车快到公司门口了，前面太堵走不动，司机就说你下车走路吧，走路都更快到。\n\n我信了司机的，下车走路了，结果还没走到公司，就被刚才的车超过了……\n\n所以说，走捷径不一定更快，走捷径也要看交通工具，11路车天然速度就比汽车慢，抢跑的一小段路程很快会被更快的交通工具超过。\n\n创业亦如是，先发优势，只是一点点优势，你还需要找到快速增长，快速抢占市场的方法。\n\n不然，就等着被后来者超越吧，而且这个后来者还可能是模仿者。\n\n到时候再哭哭啼啼写一篇痛骂大厂抄袭的文章，拿到了十万加，却丢失了市场，有什么用呢。</div>
+          <div class="article-meta">
+            <span class="pacer-badge ">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">5m</span>
+            
+            <a href="../data/[2021-03-04-1008]走捷径会更快吗nn好几次滴滴车快到公司门口了前面太堵走不动司机就说你下车走路吧走路都更快到nn我信了司机的下车走路了结果还没走.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">走捷径不一定更快（无正文，仅按标题标阶段）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">一个国外独立开发者的五年独立开发之旅所得到的经验教训</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/五年独立开发之旅的教训.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-04-22-0700]一个国外独立开发者的五年独立开发之旅所得到的经验教训.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">五年独立开发教训：激情双刃剑/关系无法摆脱/社区是学习资源</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">GPT创业四个月，投入五六千，用户五六千，收益几十块</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/GPT创业四个月复盘.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-18-0800]GPT创业四个月投入五六千用户五六千收益几十块.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">复盘讨论：赚钱不在功能强而在多少人知道，为愿意付费的用户做产品</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">给独立开发者的20条建议</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/给独立开发者的20条建议.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-19-0800]给独立开发者的20条建议.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">20条独立开发建议：多语言/VIP/多产品试错/先上线/学会推广/现在就动手</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">2023年了，为什么还要做网站？为的是可控的流量，可控的用户，可控的收入。</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/为什么还要做网站.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-08-0800]2023年了为什么还要做网站为的是可控的流量可控的用户可控的收入.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">做网站=可控资产：有积累可躺平、平台有下架风险、网站几乎不受限</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2023-08-14-0800]收藏如果你想做网站赚钱这里有张路线图通过36篇文章让你知道每一步该怎么做</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/36篇文章路线图.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-14-0800]收藏如果你想做网站赚钱这里有张路线图通过36篇文章让你知道每一步该怎么做.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">★作者钦定36篇路线图：赚钱/流量/需求/做网站/案例（学习总纲）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">看得上小钱，才能赚大钱，积少成多，聚沙成塔</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/看得上小钱才能赚大钱.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-19-0914]看得上小钱才能赚大钱积少成多聚沙成塔.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">先赚小钱再赚大钱：卖时间→产品→收购→钱生钱升级路径</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">放眼世界，遍地是金矿，此时不做AI，更待何时</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/AI工具出海财富密码.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-31-0800]放眼世界遍地是金矿此时不做AI更待何时.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">AI+工具+出海=财富密码：细分小工具+全球市场，快速行动</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">从秀才被封说起</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/从秀才被封说起平台风险.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-03-0800]从秀才被封说起.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">平台说封就封，网站（海外站）几乎不被封，资产放自己域名</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">请优先关注需求，关注产品，关注流量，其它的如变现、收费先放后面</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/新手先关注需求产品流量.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-05-0800]请优先关注需求关注产品关注流量其它的如变现收费先放后面.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新手顺序：需求→产品→流量，收款/公司问题后置，推广最难</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">养网站防老：网站可以做成一生的事业</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/养网站防老矩阵打法.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-09-0800]养网站防老网站可以做成一生的事业.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">养网站防老：矩阵打法（老带新/一词一域名/分散风险/长期资产）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">AI工具站日收入破千美元；零基础入门养网站防老路线图</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/养网站防老完整路线图.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-29-1000]AI工具站日收入破千美元零基础入门养网站防老路线图.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">养网站防老完整路线图索引（第0-9步+变现+运营），作学习导航</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">与纯银探讨再聊我们为什么要出海赚美元</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/为什么出海赚美元.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-04-0759]与纯银探讨再聊我们为什么要出海赚美元.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">出海=用细分付费避开国内规模内卷；先做第一个产品别等完美机会</div>
+        </li><li class="article-more">... 以及另外 180 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S1">
+        <div class="stage-header" onclick="toggleStage('S1')">
+          <div class="stage-badge">S1</div>
+          <div class="stage-info">
+            <div class="stage-name">需求与关键词 <span class="stage-count">139 篇文章 (131 篇精读)</span></div>
+            <div class="stage-goal">掌握“鱼多人少”选词法，通过 Google Trends、逆向广告与意图分组找到真实刚需</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S1">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>产出一张包含 20~50 个真实高意图、低竞争长尾词的结构化词表（包含搜量、意图与对应页面类型）</div>
+        <div class="stage-body" id="body-S1" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">如何在1亿用户的 Threads App 里赚钱</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/Threads里赚钱新平台红利.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-08-0753]如何在1亿用户的ThreadsApp里赚钱.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新平台红利打法：关注人需求/内容缺口/bot与托管服务</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">群友新站上线9天拿到11030个独立访客，他是怎么做到的？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/群友新站9天11030访客.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-15-2138]群友新站上线9天拿到11030个独立访客他是怎么做到的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新词新站完整案例：9天11030访客，先发+快速收录+自然外链</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">技术人如何了解目前市场上大家都在怎么赚钱？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/技术人了解市场赚钱四步法.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-23-0800]技术人如何了解目前市场上大家都在怎么赚钱.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">技术人了解市场四步法：找朋友聊/刷广告/做统计分类/针对性验证</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">找新词：一个永远有效的建站策略，让你快速拿到搜索引擎流量</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/找新词永远有效的建站策略.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-24-0800]找新词一个永远有效的建站策略让你快速拿到搜索引擎流量.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新词=新站机会：谷歌15%全新词，收录即第一，先发占位</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">人人都能学会的发掘 web 产品需求方法入门</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/发掘Web产品需求方法入门.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-26-0906]人人都能学会的发掘web产品需求方法入门.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">需求挖掘：Similarweb看流量/爱站看词/chinaz查难度，一词一站</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">有了这几个关键字优化难度分析工具，妈妈再也不怕我不会判断SEO难度了</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/关键词优化难度分析工具.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-01-0758]有了这几个关键字优化难度分析工具妈妈再也不怕我不会判断SEO难度了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">KD工具链：chinaz/Ahrefs(需N网站反链)/Semrush(分国家)，难度<60可做</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">出海不知道做什么网站？来看看别人的成功案例</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/从成功案例找方向.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-09-0800]出海不知道做什么网站来看看别人的成功案例.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">成功案例：工具站Ptable+内容站食谱，Similarweb拆流量找方向</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">人人都能学会的挖掘 web 产品需求之从出站域名发现新需求新产品</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/从出站域名发现新需求.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-12-0800]人人都能学会的挖掘web产品需求之从出站域名发现新需求新产品.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Semrush查大站出站域名=新品雷达，组合whois/流量/Archive筛选</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">分享几个优化难度不高但搜索量不小的关键词</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/低难度高搜索量关键词.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-18-0800]分享几个优化难度不高但搜索量不小的关键词.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">低难度高搜索量词：时间词/每天一页/需求×地点程序化思路</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">利用Semrush找有一定搜索量且竞争小的关键词时容易遇到的一些陷阱</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/Semrush找词陷阱.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-30-0800]利用Semrush找有一定搜索量且竞争小的关键词时容易遇到的一些陷阱.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">找词3陷阱：季节词/谷歌直达/金矿存疑；Trends全年量+看结果形态</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2023-09-01-0800]AI强需求新工具</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/AI加强需求等于新工具.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-01-0800]AI强需求新工具.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">AI+强需求=新工具公式：细分组合+新意+可收费</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">从一个“Buy me Coffee”链接说起，哥飞带你顺藤摸瓜抽丝剥茧发现更多商业秘密</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/顺藤摸瓜发现需求.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-09-1014]从一个BuymeCoffee链接说起哥飞带你顺藤摸瓜抽丝剥茧发现更多商业秘密.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">顺藤摸瓜法：从链接/反链发现谁在赚什么钱（ko-fi案例）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">别人做过的产品我还能不能做？哥飞告诉你，还能做</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/别人做过的产品还能做吗.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-10-0756]别人做过的产品我还能不能做哥飞告诉你还能做.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">网络有地理隔离：同类产品都能活，换地区/语言/渠道=新机会</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">养成好习惯，看到任何一个网站都去看看流量和流量来源分布，再看看搜索流量来自于哪些词</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/看站四步法.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-13-0800]养成好习惯看到任何一个网站都去看看流量和流量来源分布再看看搜索流量来自于哪些词.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">看站四步法：流量/相似站/来源/搜索词，一站多词策略</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">恭喜群友做了个网站上线21天拿到10万日PV，又花了13天变成了20万日PV</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/34天20万日PV案例.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-14-0800]恭喜群友做了个网站上线21天拿到10万日PV又花了13天变成了20万日PV.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">34天20万日PV案例：AI改造强需求，别为差异化而差异化</div>
+        </li><li class="article-more">... 以及另外 124 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S2">
+        <div class="stage-header" onclick="toggleStage('S2')">
+          <div class="stage-badge">S2</div>
+          <div class="stage-info">
+            <div class="stage-name">建站与开发 <span class="stage-count">63 篇文章 (63 篇精读)</span></div>
+            <div class="stage-goal">掌握 10 分钟单 HTML 极速上线、Next.js/Cloudflare 部署与通用登录支付脚手架搭建</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S2">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>成功部署首个可公开访问的工具站点，打通 Google 登录与响应式 UI，页面具备专业商业质感</div>
+        <div class="stage-body" id="body-S2" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">如何用 ChatGPT 帮助程序员更高效的写出更好的代码？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/用ChatGPT高效写代码.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2022-12-08-0830]如何用ChatGPT帮助程序员更高效的写出更好的代码.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">用ChatGPT查原理/写代码/调试/取名，先问AI再查文档</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">如何在公众号内接入对话能力时异步回复给用户</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/公众号异步回复方案.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-03-30-0930]如何在公众号内接入对话能力时异步回复给用户.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">公众号异步回复：5秒应答+消息队列+客服消息（国内技术，出海参考低）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2023-04-21-0700]如何10分钟上线一个AI导航网站</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/10分钟上线AI导航网站.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-04-21-0700]如何10分钟上线一个AI导航网站.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">GitHub+Vercel+ChatGPT 10分钟上线网站</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">以时间戳Timestamp在线工具网站为例，手把手教你做一个工具网站的详细步骤</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">20m</span>
+            <a href="../知识流程/文章分析/时间戳工具站完整教程.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-27-0800]以时间戳Timestamp在线工具网站为例手把手教你做一个工具网站的详细步骤.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">工具站完整教程：竞品分析/长尾词/URL结构/密度5%/动态页</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">不用开发，如何 10 分钟上线一个 AI 产品</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/不用开发10分钟上线AI产品.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-31-0800]不用开发如何10分钟上线一个AI产品.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Vercel AI模板中心：不写代码选模板部署+API Key即上线</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">不用开发如何上线AI网站？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/买AI源码快速上线.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-29-0800]不用开发如何上线AI网站.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">CodeCanyon买AI源码：480个几十美元一套，买来部署上线</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">不会部署AI模型、不买GPU服务器就不能做AI产品了吗？哥飞告诉你，能！</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/不部署模型做AI产品.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-20-0800]不会部署AI模型不买GPU服务器就不能做AI产品了吗哥飞告诉你能.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Huggingface/Replicate调API做AI产品，无需GPU/部署</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">一篇让你搞懂向量 Embeddings 如何使用</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/Embeddings向量搜索指南.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-03-0800]一篇让你搞懂向量Embeddings如何使用.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Embeddings语义搜索：向量化+余弦相似度，新手先存文本再向量库</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">做网站没灵感？来看看别人的优秀案例之前端工具站</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/优秀前端工具站案例.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-08-0800]做网站没灵感来看看别人的优秀案例之前端工具站.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">4个前端工具站案例：简单+好玩+停留长+直接访问高；monkeytype靠体验</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">不用开发，如何只用一个域名就可以一键部署上线一个AI产品</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/一个域名一键部署AI产品.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-22-2345]不用开发如何只用一个域名就可以一键部署上线一个AI产品.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Vercel新模板（面试/Emoji/二维码）；Replicate每个模型=一个客户端产品</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">养网站防老第0步：如果你没有编程基础，如果你不会前端开发，那么推荐跟着这个免费视频教程学习</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/第0步零基础前端入门.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-28-0800]养网站防老第0步如果你没有编程基础如果你不会前端开发那么推荐跟着这个免费视频教程学习.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">★第0步：HTML+CSS视频入门+JS事件，做在线闹钟=入门，别学框架</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">周末快速开发的网站，现在已经有2000人访问过了</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/周末快速开发2000用户.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-28-2359]周末快速开发的网站现在已经有2000人访问过了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">先上线再完善：2小时静态页+收录三件套+PH时间坑+多平台宣传</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">哥飞免费提供 API 给新手一个练习在 Vercel 编写和部署项目的机会</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/Whois练习项目.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-12-02-1855]哥飞免费提供API给新手一个练习在Vercel编写和部署项目的机会.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">whois查询练习项目：免费API+6版本渐进，完成第一个网站上线</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">花半天开发的网站上线一周，今日3000人访问，他是怎么做到的？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/半天上线一周3000人.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-12-20-2340]花半天开发的网站上线一周今日3000人访问他是怎么做到的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">MIT开源改接口半天上线；开源=宣传+自动外链</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">第二次作业练习：做一个在线讲解数独题目的AI小工具</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/AI讲解数独练习项目.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-12-25-1638]第二次作业练习做一个在线讲解数独题目的AI小工具.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">AI讲解数独9版本渐进：红海+AI差异化+需求拆解</div>
+        </li><li class="article-more">... 以及另外 48 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S3">
+        <div class="stage-header" onclick="toggleStage('S3')">
+          <div class="stage-badge">S3</div>
+          <div class="stage-info">
+            <div class="stage-name">SEO与流量入门 <span class="stage-count">70 篇文章 (69 篇精读)</span></div>
+            <div class="stage-goal">掌握 GSC 四级预警信号诊断、Bing IndexNow 主动秒级推送与高权重平台发文导流</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S3">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>站点在 GSC 与 Bing Webmaster 成功验证，首批核心页面实现收录，从 Bing 或第三方平台斩获首批真实 UV</div>
+        <div class="stage-body" id="body-S3" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">[2023-07-02-0948]新上线的网站如何快速让谷歌收录做网站为什么要生成几十万个页面</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/新站快速谷歌收录与海量页面.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-02-0948]新上线的网站如何快速让谷歌收录做网站为什么要生成几十万个页面.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新站快速收录：V2EX引荐+内链sitemap+海量关键词页思路</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">Threads 上线，我火速做了个网站，1小时就被谷歌收录了，操作步骤全揭秘</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/Threads上线1小时被谷歌收录.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-06-2315]Threads上线我火速做了个网站1小时就被谷歌收录了操作步骤全揭秘.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新站1小时被谷歌收录复盘：V2EX发帖引荐是吸引爬虫关键动作</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">10种谷歌结构化搜索结果样式介绍及实现方法，最骚的是第9种</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/10种谷歌搜索样式.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-13-2301]10种谷歌结构化搜索结果样式介绍及实现方法最骚的是第9种.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">10种谷歌搜索样式：想要哪种样式就在页面提供对应数据，评分用ld+json</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">如何清晰的知道我们网站在搜索引擎的表现：Google Search Console 使用入门讲解</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/GSC使用入门.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-07-0800]如何清晰的知道我们网站在搜索引擎的表现GoogleSearchConsole使用入门讲解.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">GSC入门：提交网站/sitemap/看效果数据/按词优化/处理通知</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">分享一个谷歌和百度都优化得不错的网站</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/千篇国学双优化内容结构.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-15-0800]分享一个谷歌和百度都优化得不错的网站.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">千篇国学案例：子域名栏目+分门别类语义覆盖长尾，不堆关键词</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">做网站如何从搜索引擎图片搜索获取流量</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/从图片搜索获取流量.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-21-0800]做网站如何从搜索引擎图片搜索获取流量.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">图片搜索=顶部精准流量：大图+alt/title优化</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">如何给一个已经上线的网站出SEO改造建议</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/给上线网站出SEO改造建议.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-02-0800]如何给一个已经上线的网站出SEO改造建议.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">老站SEO改造：URL不改+加新页+TDK/内链/sitemap/canonical/H标签</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">新网站上线最快多久能从谷歌获取搜索流量？答案是48小时内。</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/新站48小时拿到搜索流量.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-04-0800]新网站上线最快多久能从谷歌获取搜索流量答案是48小时内.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新站48小时拿流量：新词+关键词域名+按意图一页解决+从小词做起</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">需求有了，网站也做好了，流量从哪来？</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/流量从哪来五大来源.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-07-0833]需求有了网站也做好了流量从哪来.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">流量五源：搜索/免费推广/付费推广/自发传播/推荐系统</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2023-09-08-0831]5800字长文从网站站内优化到部署上线再到推广运营一篇文章让你学明白</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/站内优化到推广运营全流程.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-08-0831]5800字长文从网站站内优化到部署上线再到推广运营一篇文章让你学明白.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">站内优化全流程：意图→TDK→h1h2h3/img→内链→分门别类罗列</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">从一个月访问量7.8亿的网站告诉你子域名和子目录该如何选择</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/子域名还是子目录.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-19-0845]从一个月访问量78亿的网站告诉你子域名和子目录该如何选择.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">子域名=新站（无关词）；子目录=延伸（层级词）；fandom每词一子站案例</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">2023 的 HCU 是利基网站的杀手吗？哥飞回答你，不是！</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/HCU不是利基网站杀手.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-30-0755]2023的HCU是利基网站的杀手吗哥飞回答你不是.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">HCU是优胜劣汰：为搜索用户服务而非爬虫，好站会回来</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">以月访问量1450万的网站为例教你如何找出网站靠哪些页面从搜索引擎获取流量</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/找出网站靠哪些页面拿流量.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-04-0755]以月访问量1450万的网站为例教你如何找出网站靠哪些页面从搜索引擎获取流量.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">brainly QA页面矩阵：长句问题生成页面，排除品牌词看长尾</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">养网站防老第8步：添加统计代码，提交到 Google Search Console，增加外链，等待被收录</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/第8步统计GSC外链.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-24-0800]养网站防老第8步添加统计代码提交到GoogleSearchConsole增加外链等待被收录.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">★第8步：GA统计+GSC/sitemap+高权重外链，GitHub中转自主可控</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2023-10-30-0942]哥飞带你读Ahrefs研究网页从上线开始算起拿到排名需要多久时间</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/Ahrefs排名时间研究.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-30-0942]哥飞带你读Ahrefs研究网页从上线开始算起拿到排名需要多久时间.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Ahrefs数据：前10平均2年/第一3年；5.7%一年内进首页；新词是捷径</div>
+        </li><li class="article-more">... 以及另外 55 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S4">
+        <div class="stage-header" onclick="toggleStage('S4')">
+          <div class="stage-badge">S4</div>
+          <div class="stage-info">
+            <div class="stage-name">内容与多语言 <span class="stage-count">10 篇文章 (10 篇精读)</span></div>
+            <div class="stage-goal">打破机翻子目录陷阱，掌握 8 语种纯血独立站（.jp/.de）架构与 AI 本地市场深度推理</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S4">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>上线 1 个非英语纯血独立站，使用地道本地词与本地支付/排版规范，在目标国 SERP 获得收录与排名</div>
+        <div class="stage-body" id="body-S4" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">如何用AI做SEO之内容自动批量生成，从搜索引擎获取免费流量</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/AI批量生成内容做SEO.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-02-0800]如何用AI做SEO之内容自动批量生成从搜索引擎获取免费流量.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">AI内容SEO：当前可被收录，但要做精准流量解决客户痛点，别写垃圾</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">为什么俄罗斯版妙鸭相机即使拿下1840万月访问量，也主要只在几个国家火？哥飞告诉你答案</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/语言是天然的屏障.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-18-0800]为什么俄罗斯版妙鸭相机即使拿下1840万月访问量也主要只在几个国家火哥飞告诉你答案.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">语言是天然屏障：多语言i18n+按语言人群找当地媒体/KOL推广</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">他给博客增加多语言支持后，访问量增加了10倍</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/多语言访问量增10倍.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-12-0800]他给博客增加多语言支持后访问量增加了10倍.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">多语言=10倍流量：子目录结构+GPT翻译自动化+低竞争语言套利</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">养网站防老第9步：谷歌对于AI生成内容的态度及如何让AI生成高质量内容</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/第9步AI内容质量方法论.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-25-0842]养网站防老第9步谷歌对于AI生成内容的态度及如何让AI生成高质量内容.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">★第9步：谷歌奖励高质量AI内容；参考+范文格式+半结构化生成法</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">月访问量八百万的在线自动化工具站如何用内容做SEO获取大量优质免费流量？</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/Zapier工具站内容SEO.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-31-1000]月访问量八百万的在线自动化工具站如何用内容做SEO获取大量优质免费流量.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Zapier案例：工具站+博客内容（Best xxx）=48.9%搜索流量</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">【6000字详解】养网站防老第6步：利用ChatGPT给网站增加多语言支持</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">15m</span>
+            <a href="../知识流程/文章分析/养网站防老第6步ChatGPT多语言支持.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-21-0800]6000字详解养网站防老第6步利用ChatGPT给网站增加多语言支持.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">养网站防老第6步：子目录多语言架构与ChatGPT页面级精准翻译实操</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">再聊多语言：为什么不建议使用子域名而更建议使用子目录</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/多语言子目录vs子域名深度辨析.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-02-17-1902]再聊多语言为什么不建议使用子域名而更建议使用子目录.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">多语言子目录vs子域名深度辨析：子域名权重隔离与301规范化</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">【哥飞SEO教程】多语言网站 robots.txt 设置指南：如何正确阻止不希望被抓取的页面</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/多语言网站robots设置指南与Nextjs动态生成SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-08-10-1218]哥飞SEO教程多语言网站robotstxt设置指南如何正确阻止不希望被抓取的页面.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">多语言网站robots.txt设置指南：避免多语言目录漏配与Next.js动态生成SOP</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">独立开发者访谈：从0到月入8.7K美元 - 一个感谢信网站的成长故事</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/感谢信内容站从0到月入87K美元与AdThrive质变拆解.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-12-14-1248]独立开发者访谈从0到月入87K美元一个感谢信网站的成长故事.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">感谢信内容站从0到月入$8.7K：WordPress极简基建/场景长尾词与AdThrive质变</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">反常识 SEO 经验：一个站翻译成8种语言，不如8个站各做一个语种</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">28m</span>
+            <a href="../知识流程/文章分析/多语言反常识SEO与纯血独立站全流程SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2026-07-22-1949]反常识SEO经验一个站翻译成8种语言不如8个站各做一个语种.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">多语言反常识SEO：纯血小语种独立站架构/地道关键词调研与AI本地化推理模型</div>
+        </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S5">
+        <div class="stage-header" onclick="toggleStage('S5')">
+          <div class="stage-badge">S5</div>
+          <div class="stage-info">
+            <div class="stage-name">SEO进阶与增长 <span class="stage-count">52 篇文章 (51 篇精读)</span></div>
+            <div class="stage-goal">掌握 AI 搜索时代 GEO 竞品对比页“教育大模型”、企业级外链安全体系、内链杠杆与 Google Ads 机器学习训练</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S5">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>构建竞品对比页被 Perplexity/ChatGPT 引用，搭建安全外链网络，通过站内内链盘活全站老页权重</div>
+        <div class="stage-body" id="body-S5" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">独立开发者用得上的30个免费产品推广渠道</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/30个免费推广渠道.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-17-0800]独立开发者用得上的30个免费产品推广渠道.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">30个免费推广渠道清单：一篇文章发全渠道获取种子用户</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">分享一个容易实操且快速见效的给自己网站增加几十个外链的小技巧</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/快速增加几十个外链的小技巧.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-06-0800]分享一个容易实操且快速见效的给自己网站增加几十个外链的小技巧.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">利用网站SEO小瑕疵白帽加几十个外链（细节不公开）+难度量化</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">建站第2个月拿下1840万访问量，俄罗斯版的妙鸭相机是怎么做到的？</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/妙鸭俄版1840万爆火路径.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-16-0800]建站第2个月拿下1840万访问量俄罗斯版的妙鸭相机是怎么做到的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">妙鸭俄版1840万：付费软文+自发传播，2170个反链=可投媒体池</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">ChatPDF.com 小调查，帮你梳理这个月访问量540万的AI产品是如何爆火的</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/ChatPDF爆火路径调查.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-09-24-0800]ChatPDFcom小调查帮你梳理这个月访问量540万的AI产品是如何爆火的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">ChatPDF爆火：卡API窗口+传播链+订阅变现+开放API</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">什么是饱和式建站？为什么要饱和式建站？怎么实现饱和式建站？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/饱和式建站策略.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-26-0919]什么是饱和式建站为什么要饱和式建站怎么实现饱和式建站.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">饱和式建站：多域名同关键词霸占前10，各站必须差异化防被K</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">社群朋友两个日UV过10K的新网站：一个靠SEO，一个靠自发传播</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/两条流量路径过10KUV.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-10-2255]社群朋友两个日UV过10K的新网站一个靠SEO一个靠自发传播.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">SEO(9天10K)与自发传播(3天10K)两条路径；健康流量结构</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">上线4天获得4700个外链，他是怎么做到的？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/上线4天4700外链快打法.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-11-2350]上线4天获得4700个外链他是怎么做到的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">GPTsHunter复盘：快=抢热点+1天上线+社区发帖→4700外链</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">因为开源了一个价值几万块钱的GPTs导航程序，他出海第一周就有收入了</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/开源即传播GPTs导航案例.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-17-2326]因为开源了一个价值几万块钱的GPTs导航程序他出海第一周就有收入了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">开源即传播：3天第一笔赞助；账号经营+差异化</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">出海第一周，我的 GPTs 导航站火了</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/出海第一周GPTs导航复盘.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-20-0800]出海第一周我的GPTs导航站火了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">艾逗笔一周复盘：数据+快+开源+差异化→3天变现/周UV11.8k</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">会搞流量还是很赚钱的</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/会搞流量很赚钱.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-23-0829]会搞流量还是很赚钱的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">2013站群回顾：流水线建站+婚纱高单价；2023网站仍可SEO获流量</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">出海4个月他靠网站月入3W+美金</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/新手4个月月入3W美金.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-11-27-1647]出海4个月他靠网站月入3W美金.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">新手4个月月入3W+（多站组合）；蹭热点2小时上线</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">分享一个在Instagram上有134K关注的心灵鸡汤账号，顺便请大家喝一些鸡汤</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/Instagram鸡汤账号启示.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-12-21-2330]分享一个在Instagram上有134K关注的心灵鸡汤账号顺便请大家喝一些鸡汤.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">炒冷饭（火过会再火）+社媒账号矩阵（信任+被K兜底）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">月访问量1221万的打字练习网站的开源模式值得我们学习</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/MonkeyType开源平台化.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-12-22-2300]月访问量1221万的打字练习网站的开源模式值得我们学习.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">MonkeyType开源+平台化（冲榜）：开源=宣传+自动外链</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2024-01-06-0800]哥飞观察单月新增1300万访问量的网站是怎么做到的</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/单月1300万流量探案.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-01-06-0800]哥飞观察单月新增1300万访问量的网站是怎么做到的.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">流量探案法：搜索词时间线+趋势+域名验证（换域名承接流量）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">ChinaTravelDepot.com 2008年通过生成大量页面，三个月时间网站流量增长20倍</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/中青旅50万页面增长20倍案例.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-04-0800]ChinaTravelDepotcom2008年通过生成大量页面三个月时间网站流量增长20倍.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">中青旅入境游50万长尾组合页面3个月暴涨20倍：多维需求矩阵模板化</div>
+        </li><li class="article-more">... 以及另外 37 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S6">
+        <div class="stage-header" onclick="toggleStage('S6')">
+          <div class="stage-badge">S6</div>
+          <div class="stage-info">
+            <div class="stage-name">变现与商业化 <span class="stage-count">64 篇文章 (61 篇精读)</span></div>
+            <div class="stage-goal">掌握 AdSense 审计过审、Stripe/LemonSqueezy 订阅与用量计费、DealPass 独家会员以及 Google One Tap 漏斗调优</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S6">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>网站成功跑通在线支付，赚到出海“第一刀”美元，注册率达到 40%+，付费转化率稳定在 0.1%~0.5%</div>
+        <div class="stage-body" id="body-S6" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">从大学生抖音带货赚100万佣金说起，聊聊互联网广告系统的规则漏洞</div>
+          <div class="article-meta">
+            <span class="pacer-badge C">C</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/广告系统规则漏洞.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2019-10-14-1741]从大学生抖音带货赚100万佣金说起聊聊互联网广告系统的规则漏洞.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">广告系统科普：RTB/SSP/DSP/ADX与规则漏洞攻防</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">今天内测的公众号付费阅读，我计算了一下平均在看价值，发现定价是个技术活</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/付费阅读定价技术活.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2020-01-15-2142]今天内测的公众号付费阅读我计算了一下平均在看价值发现定价是个技术活.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">用"平均每个在看价值"数据思考付费阅读定价</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">Tailwind CSS：从副业到数百万美元的业务</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">18m</span>
+            <a href="../知识流程/文章分析/Tailwind从副业到数百万美元.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2020-08-04-1138]TailwindCSS从副业到数百万美元的业务.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Tailwind案例：被遗弃项目副产品→开源→2年400万美元业务</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">ChatGPT 的10种快速变现方法</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/ChatGPT十种快速变现.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2022-12-06-1304]ChatGPT的10种快速变现方法.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">2022年ChatGPT套壳变现10法（多数已过时，看模式分类）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2023-07-10-2353]8000字讲解人人都能学会的英文网站Adsense赚钱入门</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">30m</span>
+            <a href="../知识流程/文章分析/Adsense赚钱入门8000字.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-10-2353]8000字讲解人人都能学会的英文网站Adsense赚钱入门.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">AdSense旗舰教程：流量思维/英文站/单域名单关键词/快速收录/每周2小时上站</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">如何做到通过小产品日入100美元？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/小产品日入100美元拆解.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-19-0800]如何做到通过小产品日入100美元.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">日入100美元目标倒推：ECPM→曝光→PV→UV→关键词/注册数</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">做产品，立项之初就想好赚钱模式</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/立项就想好赚钱模式.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-19-0800]做产品立项之初就想好赚钱模式.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">立项就定赚钱模式（收费>广告），数据指标与投放赛马方法</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">为什么我的那几个站最高可以做到10美元的ECPM？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/ECPM为什么能到10美元.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-20-0800]为什么我的那几个站最高可以做到10美元的ECPM.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">离钱越近单价越高：商品图片站案例+广告位布局+站群</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">#哥飞聊付费流量# 营销短信也是付费流量生意</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/营销短信付费流量测算.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-21-0800]哥飞聊付费流量营销短信也是付费流量生意.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">付费流量测算模型：到达率/打开率/注册率/LTV，投3500回5600</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">纯流量生意怎么玩？有的公司靠这种方式一年做到几个亿利润。</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/纯流量生意的模型与归因.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-22-0800]纯流量生意怎么玩有的公司靠这种方式一年做到几个亿利润.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">纯流量生意模型：曝光→下载→注册→付费测算+归因+oCPM回传</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">我如何通过SEO和Adsense优化，把一个网站广告收入从每月八百多美元提升到每月两千多美元，经验全分享</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/广告收入800到2100美元.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-07-30-0800]我如何通过SEO和Adsense优化把一个网站广告收入从每月八百多美元提升到每月两千多美元经验全分享.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">广告收入翻倍：提速+站内SEO+广告位布局（3个/页）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">分享10个基于第三方谷歌搜索API的可实操赚钱方法</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/谷歌搜索API十个赚钱方法.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-10-0800]分享10个基于第三方谷歌搜索API的可实操赚钱方法.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Serper.dev谷歌搜索API+10个产品机会（搜索站/SaaS/插件/监控工具）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">对于我们来说，尽快多赚点美元可能是最适合我们的方案。</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">5m</span>
+            <a href="../知识流程/文章分析/尽快赚到第一个100美元.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-20-0800]对于我们来说尽快多赚点美元可能是最适合我们的方案.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">第一个100美元目标（Adsense起付线），别设门槛有流量就申请</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">如何快速估算一个网站的Adsense广告收入？</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/快速估算Adsense收入.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-23-0800]如何快速估算一个网站的Adsense广告收入.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">收入估算公式：30×UV倍数×ECPM×PV比×展示比，加AI再做一遍机会</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">Adsense如何收取Pin码，如何上传文件进行实名实地认证</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/AdsensePin码实名认证.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-24-0800]Adsense如何收取Pin码如何上传文件进行实名实地认证.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Adsense满10美元寄Pin码平信，3次收不到→人工审核（身份证+地标合影）</div>
+        </li><li class="article-more">... 以及另外 49 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S7">
+        <div class="stage-header" onclick="toggleStage('S7')">
+          <div class="stage-badge">S7</div>
+          <div class="stage-info">
+            <div class="stage-name">收款与合规 <span class="stage-count">7 篇文章 (5 篇精读)</span></div>
+            <div class="stage-goal">掌握海外公司注册、香港/海外银行开户、Stripe 风控合规与外汇合规回国通道</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S7">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>拥有稳定合规的海外收款账户与企业实体，实现美元收入合规结汇与税务安全</div>
+        <div class="stage-body" id="body-S7" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">从注册海外公司到 Stripe 收款回国</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/注册海外公司Stripe收款回国.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-08-13-0800]从注册海外公司到Stripe收款回国.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">收款链路实操：手机号→Wyoming LLC→EIN→Mercury→Stripe→Wise提现</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">出海三件套开售：公司注册、税务申报与商标申请「NSF2024首款商业产品」</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/出海合规三件套与海外公司开户指南.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-04-04-2145]出海三件套开售公司注册税务申报与商标申请NSF2024首款商业产品.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">出海合规三件套指南：美国公司注册/所得税申报/BOI/Stripe开户</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">「出海法财税」星球起航：路虽远，行则将至</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/出海法财税40问合规手册.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-04-18-2221]出海法财税星球起航路虽远行则将至.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">出海法财税40问合规手册：怀俄明LLC/Stripe直连/年审报税/商标防御</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">从深圳去香港不去网点柜台最快开通汇丰银行账号全流程攻略分享</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/免柜台赴港开通汇丰One与中银香港全流程SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-02-08-2326]从深圳去香港不去网点柜台最快开通汇丰银行账号全流程攻略分享.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">赴港免柜台开通汇丰One与中银香港SOP：屯门商场连WiFi/12367记录与避坑</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">DeepSeek如何解读：3月1日起人在内地就可以办理港澳银行卡了</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/DeepSeek解读港澳银行内地发卡新规与合规参考.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-02-20-1931]DeepSeek如何解读3月1日起人在内地就可以办理港澳银行卡了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">3000字DeepSeek解读港澳银行内地发卡新规：境内公民仅限外币卡/借记卡报告制与合规参考</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">发布商新开帐号收益达 10 美金后需进行身份验证</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">1m</span>
+            
+            <a href="../data/[2025-06-19-1513]发布商新开帐号收益达10美金后需进行身份验证.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">AdSense发布商新号达10美元身份验证提示（图片）</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2026-08-15-1626]工具出海全球收付款的流程</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">5m</span>
+            
+            <a href="../data/[2026-08-15-1626]工具出海全球收付款的流程.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">工具出海全球收付款流程与合规实务指南</div>
+        </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-arrow"><div class="arrow-line"></div><div class="arrow-text">推进至下一阶段 ➔</div></div>
+    
+      <div class="stage-card" id="card-S8">
+        <div class="stage-header" onclick="toggleStage('S8')">
+          <div class="stage-badge">S8</div>
+          <div class="stage-info">
+            <div class="stage-name">规模化与避坑 <span class="stage-count">16 篇文章 (15 篇精读)</span></div>
+            <div class="stage-goal">掌握 2 人千万 ARR 的 AI 原生工作流、创业团队 3 阶段人才配置，严守防算法惩罚与防 CPA 崩塌红线</div>
+          </div>
+          <div class="stage-toggle-btn" id="btn-S8">▼ 展开文章</div>
+        </div>
+        <div class="stage-milestone">🚩 <b>阶段里程碑：</b>形成个人或极简团队专属的多站矩阵资产，建立自动化运维与抗风险护城河</div>
+        <div class="stage-body" id="body-S8" style="display: none;">
+          <ul class="article-list">
+            
+        <li class="article-item">
+          <div class="article-title">哥飞解读：两个月拿下1359万访问量的新网站为什么会被谷歌给K了？</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/1359万被谷歌K掉警示.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2023-10-19-0800]哥飞解读两个月拿下1359万访问量的新网站为什么会被谷歌给K了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">被K警示：两个月1359万搜索流量（78%搜索+<1%外链）后被K，别追暴涨</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">[2026-08-03-1307]从网站被罚到月入3万美金刘屹讲他交过的学费</div>
+          <div class="article-meta">
+            <span class="pacer-badge E">E</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">16m</span>
+            <a href="../知识流程/文章分析/刘屹从被罚到月入3万美金.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2026-08-03-1307]从网站被罚到月入3万美金刘屹讲他交过的学费.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">批量页面被罚/推广失焦等学费：阶段错了动作就变形</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">【哥飞实操分享】一个真实的SEO失败案例，帮助大家吸取教训</div>
+          <div class="article-meta">
+            <span class="pacer-badge P">P</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">10m</span>
+            <a href="../知识流程/文章分析/ChatGPT4o首页全文输出稀释关键词密度翻车复盘.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-06-05-0800]哥飞实操分享一个真实的SEO失败案例帮助大家吸取教训.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">ChatGPT4o.ai翻车复盘：首页全文输出稀释关键词密度导致断崖降权</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">只因他们这样做：汇丰香港One就不支持内地线上开卡了</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/汇丰香港开卡政策收紧警示与跨境合规底线.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-11-27-2334]只因他们这样做汇丰香港One就不支持内地线上开卡了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">汇丰香港开卡政策收紧警示：严禁材料造假欺诈/警惕黑产导致全行业风控收紧</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">Woy 流量下滑了，原因是……</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/导航站滥收新站导致被Google降权避坑复盘.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-11-29-0932]Woy流量下滑了原因是.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Woy.ai流量下滑根因复盘：导航站免费滥收低质新站导致被Google降权避坑</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">以月收入$8.7K网站为例，说说为什么说公开自己的收入和网站很危险</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/公开域名与收入的危险性及资产隐蔽防护铁律.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2024-12-15-2214]以月收入87K网站为例说说为什么说公开自己的收入和网站很危险.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">为什么公开收入和网站极其危险：Tons of Thanks被抄案例与资产隐蔽防守铁律</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">一个悲伤的故事，日5K访客，零付费</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">6m</span>
+            <a href="../知识流程/文章分析/日5K访客消耗1500美金API零付费避坑警示.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-02-09-2157]一个悲伤的故事日5K访客零付费.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">避坑：日5K访客消耗$1500美金API零付费惨痛教训与低价值国家流量防御</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">【哥飞SEO教程】新站批量化上页面，必死</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">12m</span>
+            <a href="../知识流程/文章分析/新站批量上页面必死警示与10页梯次放量SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-03-20-2347]哥飞SEO教程新站批量化上页面必死.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">避坑警示：新站批量上页面必死！新站4维量化定义与10页梯次放量SOP</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">一个没注意，谷歌Ads 500 块钱广告费打了水漂</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">8m</span>
+            <a href="../知识流程/文章分析/谷歌Ads漏设地域打水漂警示与白名单投放SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-04-07-2244]一个没注意谷歌Ads500块钱广告费打了水漂.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">避坑警示：谷歌Ads漏设地区打水漂！Tier-1白名单设置与低预算测试SOP</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">主动关闭了一个网站</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/主动关闭月访10K网站的反思与3大合规死穴.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-05-28-2027]主动关闭了一个网站.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">哥飞避坑警示：主动关闭月访10K网站！dofollow外链农场/借壳作弊与DMCA风险</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">沉浸式翻译真的泄露隐私吗？</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 2</span>
+            <span class="min-badge">14m</span>
+            <a href="../知识流程/文章分析/沉浸式翻译隐私风波复盘与快照防抓取5重安全SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-08-10-1002]沉浸式翻译真的泄露隐私吗.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">沉浸式翻译隐私风波技术复盘：快照分享泄露根因与防爬虫收录5重安全SOP</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">别学，这是错误的品牌升级案例</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">18m</span>
+            <a href="../知识流程/文章分析/品牌升级与域名迁移12步防雪崩安全SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-09-10-1221]别学这是错误的品牌升级案例.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">品牌与域名双换避坑警示：Turbo.ai反面教材/破除301迷信与12步平滑迁移SOP</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">Cloudflare 瘫痪：全球一半以上网站都挂了，大家今晚可以早点休息了</div>
+          <div class="article-meta">
+            <span class="pacer-badge R">R</span>
+            <span class="diff-badge">难度 1</span>
+            <span class="min-badge">1m</span>
+            
+            <a href="../data/[2025-11-18-2158]Cloudflare瘫痪全球一半以上网站都挂了大家今晚可以早点休息了.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Cloudflare全球瘫痪突发快讯</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">昨晚 Cloudflare 的惊天故障，原因竟是一条没写全的 SQL 引发的蝴蝶效应</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">22m</span>
+            <a href="../知识流程/文章分析/Cloudflare全球瘫痪故障复盘与架构5大高可用避坑SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2025-11-19-1004]昨晚Cloudflare的惊天故障原因竟是一条没写全的SQL引发的蝴蝶效应.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">Cloudflare全球瘫痪故障深度复盘：未限定SQL蝴蝶效应与系统架构5大高可用避坑SOP</div>
+        </li>
+        <li class="article-item">
+          <div class="article-title">急寻三位只花了26元就开通了社群网站权限的幸运朋友</div>
+          <div class="article-meta">
+            <span class="pacer-badge W">W</span>
+            <span class="diff-badge">难度 3</span>
+            <span class="min-badge">20m</span>
+            <a href="../知识流程/文章分析/支付系统漏洞深度复盘与全流程防羊毛安全SOP.md" class="report-tag" target="_blank">📄 读报告</a>
+            <a href="../data/[2026-01-06-2244]急寻三位只花了26元就开通了社群网站权限的幸运朋友.html" class="raw-tag" target="_blank">🔗 读原文</a>
+          </div>
+          <div class="article-summary">支付系统漏洞深度复盘：单位混淆/一分钱篡改防范与全流程工程师支付安全SOP</div>
+        </li><li class="article-more">... 以及另外 1 篇文章（详见《知识流程.md》）</li>
+          </ul>
+        </div>
+      </div>
+      
+    
+    </div>
+
+    <div class="footer">
+      <p>知识流程构建完成 • 严格遵循 02-执行手册 与 learning-roadmap 规范</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleStage(code) {
+      const body = document.getElementById('body-' + code);
+      const btn = document.getElementById('btn-' + code);
+      if (body.style.display === 'none') {
+        body.style.display = 'block';
+        btn.innerText = '▲ 收起文章';
+      } else {
+        body.style.display = 'none';
+        btn.innerText = '▼ 展开文章';
+      }
+    }
+  </script>
+</body>
+</html>
